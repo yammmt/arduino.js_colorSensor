@@ -1,0 +1,71 @@
+<!-- Source code is uploaded to https://github.com/yammmt/Arduino_PlainIlluminator -->
+
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <title>Color browser</title>
+    <style type="text/css"> 
+    html {
+        display: table;
+        background-color: black;
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    body {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+    #explanation {
+        text-align: center;
+        margin: 0 auto;
+        font-size: 70px;
+        color: white;
+    }
+    #color_box {
+        display: table;
+        margin: 0 auto;
+        /*height: 80px;
+        width: 140px;*/
+        height: 50%;
+        width: 50%;
+        font-size: 20px;
+    }
+    #box_text {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        font-size: 40px;
+    }
+    #print_num {
+        text-align: center;
+        font-size:28px;
+    }
+    #down-label {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 25px;
+        color: white;
+    }
+
+    </style>
+
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<div id="explanation"> following is measured color! <br><br></div>
+<div id="color_box"> <div id="box_text">Go to HelloWork.</div> </div>
+<div id="print_num"> print </div>
+
+<div id="down-label"><font color = "lightgreen">Color Browser</font> <font color = "lightblue"> using </font><font color="bisque">arduino.js</font> </div>
+
+</body>
+</html>
