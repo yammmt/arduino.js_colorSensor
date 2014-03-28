@@ -72,27 +72,31 @@ var color = function() {
     setTimeout(color, 1000);
 }
 
-$(document).ready(function() {
-            
+function setup() {
     if(document.arduino) {
-        
         var arduino = document.arduino;
-        
-        try { 
-            arduino.open(DevicePort); 
-        } catch(e) { 
-            alert('WRONG devise port!'); 
-        };
-      
-        arduino.pinMode(Range, true);
-        arduino.pinMode(Gate, true);
-        arduino.pinMode(Ck, true);
-        arduino.pinMode(Dout, false);
-
-        color();
+        try{
+            arduino.open(DevicePort);
+            arduino.pinMode(Range, true);
+            arduino.pinMode(Gate, true);
+            arduino.pinMode(Ck, true);
+            arduino.pinMode(Dout, false);
+            color();
+        } catch(e) {
+            alert("Connection failed!");
+        }
     }
     else {
-        alert("arduino.js hasn't been installed!");
+        alert("NO arduino.js!");
     }
-            
+};
+
+$(function () {
+    setup();
 });
+
+function changeDevicePort(){
+    DevicePort = $('#devPort').val();
+    setup();
+};
+

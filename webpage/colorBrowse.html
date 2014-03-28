@@ -1,4 +1,4 @@
-<!-- Source code is uploaded to https://github.com/yammmt/Arduino_PlainIlluminator -->
+<!-- This source code is uploaded to https://github.com/yammmt/arduino.js_colorSensor -->
 
 <!DOCTYPE html>
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
@@ -20,18 +20,16 @@
         width: 100%;
         margin: 0 auto;
         padding: 0;
+        color: white;
     }
     #explanation {
         text-align: center;
         margin: 0 auto;
         font-size: 70px;
-        color: white;
     }
     #color_box {
         display: table;
         margin: 0 auto;
-        /*height: 80px;
-        width: 140px;*/
         height: 50%;
         width: 50%;
         font-size: 20px;
@@ -46,12 +44,16 @@
         text-align: center;
         font-size:28px;
     }
-    #down-label {
+    #up-label {
         position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 40px;
+    }
+    #settings {
+        position: fixed;
         bottom: 10px;
         right: 10px;
-        font-size: 25px;
-        color: white;
     }
 
     </style>
@@ -61,11 +63,16 @@
 </head>
 <body>
 
-<div id="explanation"> following is measured color! <br><br></div>
-<div id="color_box"> <div id="box_text"> Hello World! </div> </div>
-<div id="print_num"> number </div>
+    <div id="explanation"><br>following is measured color! <br><br></div>
+    <div id="color_box"> <div id="box_text"> Hello World! </div> </div>
+    <div id="print_num"> number </div>
 
-<div id="down-label"><font color = "lightgreen">Color Browser</font> <font color = "lightblue"> using </font><font color="bisque">arduino.js</font> </div>
+    <div id="up-label"><b><font color = "lightgreen">Color Browser</font> <font color = "lightblue"> using </font><font color="bisque">arduino.js</font></b></div>
+    <form id="settings" action="javascript:void(0)">
+        Device Port:
+        <input type="text" id="devPort">
+        <input type="button" value="Change" onclick="changeDevicePort()">
+    </form> 
 
 </body>
 </html>
